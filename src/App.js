@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Data from "./data.json";
+import JobListings from "./JobListings";
+import headerImg from "./images/bg-header-desktop.svg";
 
 function App() {
+  // console.log(jobData);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <div className="header-img-div">
+          <img className="header-img" alt="header logo" src={headerImg}></img>
+        </div>
       </header>
+
+      <JobListings jobData={Data} />
     </div>
   );
 }
