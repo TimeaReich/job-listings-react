@@ -1,19 +1,18 @@
 import "./App.css";
+import React, { useState, useEffect } from "react";
 import Data from "./data.json";
 import JobListings from "./JobListings";
-import headerImg from "./images/bg-header-desktop.svg";
+import Header from "./Header";
+import Filters from "./Filters";
 
 function App() {
-  // console.log(jobData);
+  const [filters, setFilters] = useState([]);
+
   return (
     <div className="App">
-      <header>
-        <div className="header-img-div">
-          <img className="header-img" alt="header logo" src={headerImg}></img>
-        </div>
-      </header>
-
-      <JobListings jobData={Data} />
+      <Header />
+      <Filters setFilters={setFilters} filters={filters} />
+      <JobListings filters={filters} setFilters={setFilters} jobData={Data} />
     </div>
   );
 }
