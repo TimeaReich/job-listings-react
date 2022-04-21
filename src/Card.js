@@ -1,10 +1,6 @@
 import React from "react";
 
 const Card = (props) => {
-  // const filter = () => {
-  //   (props.setFilters());
-  // };
-
   return (
     <div className="card-container">
       <div className="logo-div">
@@ -28,7 +24,6 @@ const Card = (props) => {
       <div className="button-div">
         <button
           onClick={() => {
-            console.log(props.item.role);
             props.setFilters(props.filters.concat(props.item.role));
           }}
           className="languages-button"
@@ -46,8 +41,8 @@ const Card = (props) => {
         {props.item.languages.map((item) => {
           return (
             <button
+              key={item}
               onClick={() => {
-                console.log(item);
                 props.setFilters(props.filters.concat(item));
               }}
               className="languages-button"
