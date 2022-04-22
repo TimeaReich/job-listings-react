@@ -3,24 +3,27 @@ import React from "react";
 const Card = (props) => {
   return (
     <div className="card-container">
-      <div className="logo-div">
-        <img alt="logo" src={props.item.logo}></img>
-      </div>
-      <div className="description-div">
-        <div className="description">
-          <p className="company-name">{props.item.company}</p>
-          {props.item.new ? <p className="new">NEW!</p> : ""}
-          {props.item.featured ? <p className="featured">FEATURED</p> : ""}
+      <div className="card">
+        <div className="logo-div">
+          <img alt="logo" src={props.item.logo}></img>
         </div>
-        <p className="position">{props.item.position}</p>
-        <div className="job-detail-div">
-          <p>{props.item.postedAt}</p>
-          <span className="dot"></span>
-          <p>{props.item.contract}</p>
-          <span className="dot"></span>
-          <p>{props.item.location}</p>
+        <div className="description-div">
+          <div className="description">
+            <p className="company-name">{props.item.company}</p>
+            {props.item.new ? <p className="new">NEW!</p> : ""}
+            {props.item.featured ? <p className="featured">FEATURED</p> : ""}
+          </div>
+          <p className="position">{props.item.position}</p>
+          <div className="job-detail-div">
+            <p>{props.item.postedAt}</p>
+            <span className="dot"></span>
+            <p>{props.item.contract}</p>
+            <span className="dot"></span>
+            <p>{props.item.location}</p>
+          </div>
         </div>
       </div>
+
       <div className="button-div">
         <button
           onClick={() => {

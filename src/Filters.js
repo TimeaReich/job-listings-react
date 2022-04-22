@@ -1,19 +1,27 @@
 import React from "react";
 
 const Filters = (props) => {
-  const onClickHandler = () => {
+  const onClickClear = () => {
     props.setFilters([]);
   };
+  const onClickDelete = () => {};
 
   return props.filters.length > 0 ? (
     <div className="filters-div">
-      <div>
+      <div className="filter-box">
         {props.filters.map((item) => {
-          return <button className="languages-button">{item}</button>;
+          return (
+            <div className="filters-container">
+              <p className="filters-p">{item}</p>
+              <button onClick={onClickDelete} className="filters-button">
+                X
+              </button>
+            </div>
+          );
         })}
       </div>
-      <div>
-        <button onClick={onClickHandler} className="clear-button">
+      <div className="clear-button-container">
+        <button onClick={onClickClear} className="clear-button">
           Clear
         </button>
       </div>
