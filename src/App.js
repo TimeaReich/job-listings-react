@@ -19,7 +19,6 @@ function App() {
           item.level.includes(searchWord)
       );
     });
-
     filter.map((item) => setFilteredData(item));
   }, [filters]);
 

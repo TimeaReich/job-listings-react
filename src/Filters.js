@@ -4,16 +4,24 @@ const Filters = (props) => {
   const onClickClear = () => {
     props.setFilters([]);
   };
-  const onClickDelete = () => {};
+  const onClickDelete = (index) => {
+    props.setFilters((prevState) =>
+      prevState.filter((item, index1) => index !== index1)
+    );
+  };
 
   return props.filters.length > 0 ? (
     <div className="filters-div">
       <div className="filter-box">
-        {props.filters.map((item) => {
+        {props.filters.map((item, index) => {
           return (
-            <div className="filters-container">
+            <div key={index} className="filters-container">
               <p className="filters-p">{item}</p>
-              <button onClick={onClickDelete} className="filters-button">
+
+              <button
+                onClick={onClickDelete.bind(null, index)}
+                className="filters-button"
+              >
                 X
               </button>
             </div>

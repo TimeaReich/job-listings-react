@@ -140,7 +140,6 @@
   flex-direction: row;
   align-items: center;
 }
-
 .clear-button {
   border: none;
   color: var(--DarkCyan);
